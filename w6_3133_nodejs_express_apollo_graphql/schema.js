@@ -16,7 +16,7 @@ const typeDefs = gql`
     type Mutation {
         addMovie(title: String!, director: String!, year: Int!): Movie
         updateMovie(id: ID!, title: String!, director: String!, year: Int): Movie
-        deleteMovie(id: ID!): Movie
+        deleteMovie(id: ID!): String
     }
 
 `;
