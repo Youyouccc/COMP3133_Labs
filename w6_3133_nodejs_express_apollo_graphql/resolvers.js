@@ -1,28 +1,25 @@
 const Movie = require('./models/Movie');
 
 const resolvers = {
-  Query: {
-    // Get all movies
-    getAllMovies: async () => {
-      try {
-        const movies = await Movie.find(); // Fetch all movies from the database
-        return movies;
-      } catch (error) {
-        throw new Error("Failed to fetch movies");
-      }
+    Query: {
+        getAllMovies: async () => {
+          try {
+            return await Movie.find(); // This fetches all movies from MongoDB
+          } catch (error) {
+            console.error('Error fetching movies:', error);
+            return [];
+          }
+        },
+        getMovieById: async (_, { id }) => {
+          try {
+            return await Movie.findById(id); // Fetches a movie by ID
+          } catch (error) {
+            console.error('Error fetching movie by ID:', error);
+            return null;
+          }
+        },
     },
-    // Get a movie by ID
-    getMovieById: async (_, { id }) => {
-      try {
-        const movie = await Movie.findById(id); // Fetch movie by ID
-        if (!movie) throw new Error("Movie not found");
-        return movie;
-      } catch (error) {
-        throw new Error("Failed to fetch movie");
-      }
-    },
-  },
-  Mutation: {
+   Mutation: {
     // Add a new movie
     addMovie: async (_, { name, director_name, production_house, release_date, rating }) => {
       try {
