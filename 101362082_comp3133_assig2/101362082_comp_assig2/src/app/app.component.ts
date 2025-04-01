@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = '101362082_comp3133_assig2';
+  title = '101362082_comp_assig2';
 }

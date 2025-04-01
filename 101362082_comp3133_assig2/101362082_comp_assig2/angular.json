@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "101362082_comp3133_assig2": {
+    "101362082_comp_assig2": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/101362082_comp3133_assig2",
+            "outputPath": "dist/101362082_comp_assig2",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -29,12 +29,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -64,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "101362082_comp3133_assig2:build:production"
+              "buildTarget": "101362082_comp_assig2:build:production"
             },
             "development": {
-              "buildTarget": "101362082_comp3133_assig2:build:development"
+              "buildTarget": "101362082_comp_assig2:build:development"
             }
           },
           "defaultConfiguration": "development"
