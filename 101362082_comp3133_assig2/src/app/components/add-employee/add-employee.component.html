@@ -1,0 +1,55 @@
+<div class="container mt-4">
+    <h2>Add New Employee</h2>
+    <form (ngSubmit)="addEmployee()">
+        <div class="mb-3">
+            <label for="first_name" class="form-label">First Name:</label>
+            <input type="text" id="first_name" name="first_name" [(ngModel)]="employee.first_name" class="form-control"
+                required>
+        </div>
+        <div class="mb-3">
+            <label for="last_name" class="form-label">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" [(ngModel)]="employee.last_name" class="form-control"
+                required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" [(ngModel)]="employee.email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="gender" class="form-label">Gender:</label>
+            <select id="gender" name="gender" [(ngModel)]="employee.gender" class="form-select" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="designation" class="form-label">Designation:</label>
+            <input type="text" id="designation" name="designation" [(ngModel)]="employee.designation"
+                class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="salary" class="form-label">Salary:</label>
+            <input type="number" id="salary" name="salary" [(ngModel)]="employee.salary" class="form-control" required
+                min="1000">
+        </div>
+        <div class="mb-3">
+            <label for="date_of_joining" class="form-label">Date of Joining:</label>
+            <input type="date" id="date_of_joining" name="date_of_joining" [(ngModel)]="employee.date_of_joining"
+                class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="department" class="form-label">Department:</label>
+            <input type="text" id="department" name="department" [(ngModel)]="employee.department"
+                class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="employee_photo" class="form-label">Employee Photo URL:</label>
+            <input type="text" id="employee_photo" name="employee_photo" [(ngModel)]="employee.employee_photo"
+                class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary me-2">Save</button>
+        <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+        <p class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
+    </form>
+</div>
